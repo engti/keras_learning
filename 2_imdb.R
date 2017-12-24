@@ -81,13 +81,13 @@
   
   model %>% compile(
     optimizer = "rmsprop",
-    loss = "mse",
+    loss = "binary_crossentropy",
     metrics = c("accuracy")
   )
   
   model %>% fit(x_train, y_train, epochs = 4, batch_size = 512)
   results <- model %>% evaluate(x_test, y_test)
     
-  tmp <- model %>% predict(x_test[1:20,])
+  model %>% predict(x_test[1:20,])
   
   
