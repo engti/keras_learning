@@ -35,7 +35,7 @@
   test_labels <- to_categorical(test_labels)
   
   ## fit model
-  network %>% fit(train_images, train_labels, epochs = 5, batch_size = 128)
+  network %>% fit(train_images, train_labels, epochs = 10, batch_size = 128)
   
   ## check accuracy
   metrics <- network %>% evaluate(test_images, test_labels)
